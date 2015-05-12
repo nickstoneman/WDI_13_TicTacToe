@@ -1,0 +1,15 @@
+body {
+    margin: 100px;
+    align-content: center;
+
+}
+
+.box {
+  display: inline-block;
+  width: 320px;
+  height: 320px;
+  border: 2px solid teal;
+  border-radius: 10px;
+  /*background-color: rgba(142, 228, 219, 0.5);*/
+  /*background-color: rgba(146, 125, 68, 0.5);*/
+  /* display: inline-block; */}
