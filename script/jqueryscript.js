@@ -1,6 +1,6 @@
 var moves = 0;
-var gameBoard = [];
-
+var gameBoard = ["0", "0", "0", "0", "0", "0", "0", "0", "0"];
+var winningIndexPositions = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [6,4,2] ];
 
 
 $( document ).ready(function() {
@@ -9,7 +9,7 @@ $( document ).ready(function() {
     // Store the player moves as X or O in array
     // var gameBoard = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ];
     // Winning indexPositions. If x === winCombos or o === winCombos gets winner. 
-    var winningIndexPositions = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [6,4,2] ];
+    
 
     var playerX = "X";
     var playerO = "O";
@@ -56,11 +56,18 @@ $( document ).ready(function() {
       if (moves % 2 === 0) {
         console.log("move is even");
         $(this).text("X");
-        gameBoard.push("x");
+        var id = Number(this.id);
+        gameBoard[id] = "X";
+        // gameBoard.push("x");
       } else {
         console.log("move is odd");
         $(this).text("O");
-        gameBoard.push("o");
+        var id = Number(this.id);
+        gameBoard[id] = "O";
+        // var id = $(this).attr('id’);
+        // gameBoard.push("o");
+        // Number($(‘#id’));
+        // Number($(‘#id’))
       }
 
       // var pushthings = $(this).html("<div>" + playerTurn + "</div>");
@@ -75,6 +82,8 @@ $( document ).ready(function() {
 
     console.log(gameBoard);
 
+// var gameBoard = jQuery.parseJSON( '{ "name": "John" }' );
+// alert( gameBoard.name === "John" );
 
 
   
