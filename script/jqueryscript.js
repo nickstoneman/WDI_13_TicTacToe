@@ -2,90 +2,87 @@ var moves = 0;
 var gameBoard = ["0", "0", "0", "0", "0", "0", "0", "0", "0"];
 var winningIndexPositions = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [6,4,2] ];
 
+// var playerXArray = ["0", "0", "0", "0", "0", "0", "0", "0", "0"];
+// var playerOArray = ["0", "0", "0", "0", "0", "0", "0", "0", "0"];
 
 $( document ).ready(function() {
-  console.log( "ready!" );
+  // console.log( "ready!" );
 
-    // Store the player moves as X or O in array
-    // var gameBoard = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ];
-    // Winning indexPositions. If x === winCombos or o === winCombos gets winner. 
-    
+  // Store the player moves as X or O in array
+  // var gameBoard = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ];
+  // Winning indexPositions. If x === winCombos or o === winCombos gets winner. 
 
     var playerX = "X";
     var playerO = "O";
     var playerTurn = "";
-    
 
-// THIS WORKS
-  // $(".box").each(function(){
-  //   gameBoard.push($(this).text());
-  //   // console.log(gameBoard);
-  // });
+  // START GAME FUNCTION / COIN TOSS
+  // Need a playerTurn function to toggle between player moves
+  // cointToss selects first turn of X or O
+  // var coinToss = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+  // console.log(coinToss);
 
-
-   // START GAME FUNCTION
-   // Need a playerTurn function to toggle between player moves
-    // cointToss selects first turn of X or O
-    // var coinToss = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-    // console.log(coinToss);
-
-
-
+  // Sets first move to "X"
     var playerTurn = function() {
       if (moves % 2 === 0) {
         playerTurn = playerX;
-        // return
-        // return playerTurn;
-        // $( ".box" ).click(function() {
-        // $(this).html("<div>apple</div>"); })
-        console.log(playerTurn);
+        // console.log(playerTurn);
       } else {
         playerTurn = playerO;
-        // return
-        // return playerTurn;
-        // $( ".box" ).click(function() {
-        // $(this).html("<div>banana</div>"); })
       }
-      console.log(playerTurn);
    };
-       // 
-
     
-   //Push contents of boxes to array gameBoard 
+   // Change turns- X goes first- then logs move to gameBoard[]
     $(".box").on("click", function() {
       if (moves % 2 === 0) {
-        console.log("move is even");
+        // console.log("move is even");
         $(this).text("X");
         var id = Number(this.id);
         gameBoard[id] = "X";
+        // playerXArray[id] = "X";
         // gameBoard.push("x");
       } else {
-        console.log("move is odd");
+        // console.log("move is odd");
         $(this).text("O");
         var id = Number(this.id);
         gameBoard[id] = "O";
-        // var id = $(this).attr('id’);
-        // gameBoard.push("o");
-        // Number($(‘#id’));
-        // Number($(‘#id’))
+        // playerOArray[id] = "O";
+        // console.log(playerOArray);
       }
+      
+      //  Decide who wins
+      // console.log($.inArray(index, gameBoard[0]));
+      
+       $.each(winningIndexPositions, function(index, winningCombo) {
+          // console.log(winningIndexPositions);
+          // console.log(gameBoard[winningCombo[0]] + gameBoard[winningCombo[1]] + gameBoard[winningCombo[2]]);
+          $.each(gameBoard, function(index, tictac){
+            // if(gameBoard[0] && gameBoard[1] && gameBoard[2] === "X") {
+            //   console.log("winner");
+            if(gameBoard[winningCombo[0]] && gameBoard[winningCombo[1]] && gameBoard[winningCombo[2]] === "X") {
+              console.log("winner");
+            }
+          })
+          // var winningX = gameBoard[winningCombo[0]] + gameBoard[winningCombo[1]] + gameBoard[winningCombo[2]];
+          // console.log($.inArray(winningX, gameBoard[0]));
 
-      // var pushthings = $(this).html("<div>" + playerTurn + "</div>");
-      // debugger;
-      // playerTurn();
-      // console.log("playermove is : " + moves) 
-
-      // gameBoard.push(pushthings);
-      // console.log(gameBoard);
+          // if ( winningX === winningIndexPositions ) {
+          //   alert("X Wins");
+          //   }
+          }) 
+        
+      //       // if (gameBoard === winningX) { 
+      //       // console.log(winningX);
+      //       console.log($.inArray("X", gameBoard[winningCombo[0]] + gameBoard[winningCombo[1]] + gameBoard[winningCombo[2]]));
+      //       // console.log($.inArray("X", winningX)); 
+            
+      
       moves = moves + 1;
     });    
 
-    console.log(gameBoard);
-
-// var gameBoard = jQuery.parseJSON( '{ "name": "John" }' );
-// alert( gameBoard.name === "John" );
-
-
+    // DECIDE WINNER
+    
+    // console.log($.inArray("X", gameBoard[2, 4]))
   
     // $( ".box" ).click(function() {
     //   // If its turn #1 do this
@@ -104,7 +101,5 @@ $( document ).ready(function() {
     // $( "#2" ).click(function() {
     //   $(this).html("<div>O</div>");
     //   });
-
-console.log(gameBoard);
 
 });
