@@ -2,12 +2,25 @@ var moves = 0;
 var gameBoard = ["0", "0", "0", "0", "0", "0", "0", "0", "0"];
 var winningIndexPositions = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [6,4,2] ];
 
-// var playerXArray = ["0", "0", "0", "0", "0", "0", "0", "0", "0"];
-// var playerOArray = ["0", "0", "0", "0", "0", "0", "0", "0", "0"];
+var adjectives = ['Sweet move for ', 'Nice reply by ', 'Snap! With an ', 'Plays ', 'Lays down an '];
 
 $( document ).ready(function() {
-  // console.log( "ready!" );
+  console.log( "ready!" );
 
+    soundManager.setup({
+    url: 'swf/',
+    flashVersion: 9,
+    preferFlash: false,
+    onready: function() {
+    }
+  });
+      $('.box').on("click", function(){
+      var mySound = soundManager.createSound({
+      url: 'audio/tommib_cutA.mp3'
+          });
+      mySound.play()
+       })
+   
   // Store the player moves as X or O in array
   // var gameBoard = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ];
   // Winning indexPositions. If x === winCombos or o === winCombos gets winner. 
@@ -41,6 +54,10 @@ $( document ).ready(function() {
         this.childNodes[3].innerText = "X"
         var id = Number(this.id);
         gameBoard[id] = "X";
+        
+        var output = this.childNodes[3].innerText = "X"; 
+        var randomAdjective = adjectives[Math.floor(adjectives.length * Math.random())];
+        $('ul').append('<li>' + randomAdjective + " " + output + '</li>');
         // playerXArray[id] = "X";
         // gameBoard.push("x");
       } else {
@@ -51,6 +68,9 @@ $( document ).ready(function() {
         gameBoard[id] = "O";
         // playerOArray[id] = "O";
         // console.log(playerOArray);
+        var output = this.childNodes[3].innerText = "O"; 
+        var randomAdjective = adjectives[Math.floor(adjectives.length * Math.random())];
+        $('ul').append('<li>' + randomAdjective + " " + output + '</li>');
       }
       
       //  Decide who wins
@@ -61,12 +81,20 @@ $( document ).ready(function() {
           
            if((gameBoard[winningCombo[0]] ==="X") && (gameBoard[winningCombo[1]] === "X") && (gameBoard[winningCombo[2]] === "X")) {
               console.log("X winner");
+              $('#winner-text').text("x wins!");
             } else if 
              ((gameBoard[winningCombo[0]] ==="O") && (gameBoard[winningCombo[1]] === "O") && (gameBoard[winningCombo[2]] === "O")) {
               console.log("O winner");
-            }  
+              $('#winner-text').text("o wins!");
+            } else if (moves.length === 8) {
+              console.log("its a tie");
+
+          };
+            
           }) 
+       console.log(moves);
       moves = moves + 1;
+      
     });
 
     // if(condition){

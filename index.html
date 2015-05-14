@@ -4,10 +4,20 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script type="text/javascript" src="script/jqueryscript.js"></script>
+  <script type="text/javascript" src="script/soundmanager2.js"></script>
+  <script type="text/javascript" src="script/inlineplayer.js"></script>
   <title>Tic Tac Toe</title>
 </head>
   <body>
+
+  <div id="column-left">
+  <h2>Tic Tac Toe</h2>
+    <p>Let's play a game.</p>
+    <ul></ul>
+  <h2 id="winner-text"></h2>
+  </div>
    
+   <div id="column-right">
    <span class="board_container">
     <div class="box" id="0">
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
@@ -98,6 +108,7 @@
     </div>
   </div>
   </span>
-
+  </div>
   </body>
+
 </html>
