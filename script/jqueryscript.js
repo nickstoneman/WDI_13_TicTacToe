@@ -55,27 +55,24 @@ $( document ).ready(function() {
       
        $.each(winningIndexPositions, function(index, winningCombo) {
           // console.log(winningIndexPositions);
-          // console.log(gameBoard[winningCombo[0]] + gameBoard[winningCombo[1]] + gameBoard[winningCombo[2]]);
-          // var winningX = gameBoard[winningCombo[0]] + gameBoard[winningCombo[1]] + gameBoard[winningCombo[2]];
-          // console.log($.inArray(winningX, gameBoard[0]));
-           if(gameBoard[winningCombo[0]] && gameBoard[winningCombo[1]] && gameBoard[winningCombo[2]] === "X") {
-              console.log("x winner");
+          
+           if((gameBoard[winningCombo[0]] ==="X") && (gameBoard[winningCombo[1]] === "X") && (gameBoard[winningCombo[2]] === "X")) {
+              console.log("X winner");
+            } else if 
+             ((gameBoard[winningCombo[0]] ==="O") && (gameBoard[winningCombo[1]] === "O") && (gameBoard[winningCombo[2]] === "O")) {
+              console.log("O winner");
             }
-
-
-          // if ( winningX === winningIndexPositions ) {
-          //   alert("X Wins");
-          //   }
           }) 
-        
-      //       // if (gameBoard === winningX) { 
-      //       // console.log(winningX);
-      //       console.log($.inArray("X", gameBoard[winningCombo[0]] + gameBoard[winningCombo[1]] + gameBoard[winningCombo[2]]));
-      //       // console.log($.inArray("X", winningX)); 
-            
-      
       moves = moves + 1;
-    });    
+    });
+
+    // if(condition){
+    //   statement
+    // } else if (condition2){
+    //   statement
+    // } else {
+    //   stament
+    // }
 
     // DECIDE WINNER
     
