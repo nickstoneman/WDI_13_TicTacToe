@@ -33,17 +33,20 @@ $( document ).ready(function() {
    };
     
    // Change turns- X goes first- then logs move to gameBoard[]
-    $(".box").on("click", function() {
+    $(".box").on("click", function(e) {
       if (moves % 2 === 0) {
         // console.log("move is even");
-        $(this).text("X");
+        // debugger
+        // $('.box').text('X');
+        this.childNodes[3].innerText = "X"
         var id = Number(this.id);
         gameBoard[id] = "X";
         // playerXArray[id] = "X";
         // gameBoard.push("x");
       } else {
         // console.log("move is odd");
-        $(this).text("O");
+        // $('.box').text('O')
+        this.childNodes[3].innerText = "O"
         var id = Number(this.id);
         gameBoard[id] = "O";
         // playerOArray[id] = "O";
@@ -61,7 +64,7 @@ $( document ).ready(function() {
             } else if 
              ((gameBoard[winningCombo[0]] ==="O") && (gameBoard[winningCombo[1]] === "O") && (gameBoard[winningCombo[2]] === "O")) {
               console.log("O winner");
-            }
+            }  
           }) 
       moves = moves + 1;
     });

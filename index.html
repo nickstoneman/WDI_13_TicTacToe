@@ -6,23 +6,98 @@
   <script type="text/javascript" src="script/jqueryscript.js"></script>
   <title>Tic Tac Toe</title>
 </head>
-  <body id="container">
-  <span>
-    <div id="row1">
-      <div class="box" id="0"></div>
-      <div class="box" id="1"></div>
-      <div class="box" id="2"></div>
+  <body>
+   
+   <span class="board_container">
+    <div class="box" id="0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+        <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+        <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+        <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+      </svg>
+        <h3 id="playerMove"></h3>
     </div>
-    <div id="row2">
-      <div class="box" id="3"></div>
-      <div class="box" id="4"></div>
-      <div class="box" id="5"></div>
+    <div class="box" id="1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+        <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+        <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+        <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+      </svg>
+        <h3 id="playerMove"></h3>
     </div>
-    <div id="row3">
-      <div class="box" id="6"></div>
-      <div class="box" id="7"></div>
-      <div class="box" id="8"></div>
+    <div class="box" id="2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+        <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+        <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+        <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+      </svg>
+        <h3 id="playerMove"></h3>
     </div>
+    </span>
+    
+    <span class="board_container">
+    <div class="box" id="3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+        <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+        <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+        <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+      </svg>
+        <h3 id="playerMove"></h3>
+    </div>
+    <div class="box" id="4">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+        <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+        <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+        <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+      </svg>
+        <h3 id="playerMove"></h3>
+    </div>
+    <div class="box" id="5">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+        <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+        <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+        <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+      </svg>
+        <h3 id="playerMove"></h3>
+    </div>
+    </span>
+
+    <span class="board_container">
+    <div class="box" id="6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+        <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+        <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+        <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+      </svg>
+        <h3 id="playerMove"></h3>
+    </div>
+    <div class="box" id="7">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+        <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+        <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+        <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+      </svg>
+        <h3 id="playerMove"></h3>
+    </div>
+    <div class="box" id="8">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+        <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+        <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+        <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+      </svg>
+        <h3 id="playerMove"></h3>
+    </div>
+  </div>
   </span>
+
   </body>
 </html>
