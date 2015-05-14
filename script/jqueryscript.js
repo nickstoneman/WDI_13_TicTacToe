@@ -1,5 +1,6 @@
 var moves = 0;
-var gameBoard = ["0", "0", "0", "0", "0", "0", "0", "0", "0"];
+// var gameBoard = ["0", "0", "0", "0", "0", "0", "0", "0", "0"];
+var gameBoard = [];
 var winningIndexPositions = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [6,4,2] ];
 
 var adjectives = ['Sweet move for ', 'Nice reply by ', 'Snap! With an ', 'Plays ', 'Lays down an '];
@@ -88,43 +89,13 @@ $( document ).ready(function() {
               $('#winner-text').text("o wins!");
             } else if (moves.length === 8) {
               console.log("its a tie");
-
-          };
-            
+              };
           }) 
-       console.log(moves);
-      moves = moves + 1;
-      
-    });
-
-    // if(condition){
-    //   statement
-    // } else if (condition2){
-    //   statement
-    // } else {
-    //   stament
-    // }
-
-    // DECIDE WINNER
-    
-    // console.log($.inArray("X", gameBoard[2, 4]))
-  
-    // $( ".box" ).click(function() {
-    //   // If its turn #1 do this
-    //   $(this).html("<div>Klm</div>");
-    //   // If its turn #2 do this
-    //   });
-
-    // $( ".box" ).click(function() {
-    //   $(this).html("<div>O</div>");
-    //   });
-
-    // $( "#1" ).click(function() {
-    //   $(this).html("<div>X</div>");
-    //   });
-
-    // $( "#2" ).click(function() {
-    //   $(this).html("<div>O</div>");
-    //   });
+            console.log(moves);
+            moves = moves + 1;
+              // $("#reset_board").on("click", function() {
+              // gameBoard.length = 0;
+          }); 
+      // });
 
 });
