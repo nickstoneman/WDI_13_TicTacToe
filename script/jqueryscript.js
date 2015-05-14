@@ -56,15 +56,12 @@ $( document ).ready(function() {
        $.each(winningIndexPositions, function(index, winningCombo) {
           // console.log(winningIndexPositions);
           // console.log(gameBoard[winningCombo[0]] + gameBoard[winningCombo[1]] + gameBoard[winningCombo[2]]);
-          $.each(gameBoard, function(index, tictac){
-            // if(gameBoard[0] && gameBoard[1] && gameBoard[2] === "X") {
-            //   console.log("winner");
-            if(gameBoard[winningCombo[0]] && gameBoard[winningCombo[1]] && gameBoard[winningCombo[2]] === "X") {
-              console.log("winner");
-            }
-          })
           // var winningX = gameBoard[winningCombo[0]] + gameBoard[winningCombo[1]] + gameBoard[winningCombo[2]];
           // console.log($.inArray(winningX, gameBoard[0]));
+           if(gameBoard[winningCombo[0]] && gameBoard[winningCombo[1]] && gameBoard[winningCombo[2]] === "X") {
+              console.log("x winner");
+            }
+
 
           // if ( winningX === winningIndexPositions ) {
           //   alert("X Wins");

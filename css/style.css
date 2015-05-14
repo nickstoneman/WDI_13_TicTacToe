@@ -1,7 +1,7 @@
 body {
     margin: 100px;
     align-content: center;
-
+    background-image: url(http://subtlepatterns.com/patterns/pool_table.png);
 }
 
 .box {
@@ -9,7 +9,7 @@ body {
   vertical-align: top;
   width: 100px;
   height: 100px;
-  border: 1px solid teal;
+  border: 1px solid white;
   margin: 2px;
   /*border-radius: 10px;*/
   /*background-color: rgba(142, 228, 219, 0.5);*/
