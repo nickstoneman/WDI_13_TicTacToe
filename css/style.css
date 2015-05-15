@@ -59,7 +59,7 @@ svg {
 }
 
 svg line {
-  stroke-width: 10;
+  stroke-width: 15;
   stroke: #000;
   fill: none;
   stroke-dasharray: 200;
@@ -152,7 +152,7 @@ svg line {
 }
 
 .box svg line {
-  stroke-width: 3;
+  stroke-width: 15;
   stroke: #ecf0f1;
   fill: none;
   -webkit-transition: all .8s ease-in-out;

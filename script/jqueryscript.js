@@ -3,7 +3,7 @@ var moves = 0;
 var gameBoard = [];
 var winningIndexPositions = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [6,4,2] ];
 
-var adjectives = ['Sweet move for ', 'Nice reply by ', 'Snap! With an ', 'Plays ', 'Lays down an '];
+var adjectives = ['Sweet move for ', 'Nice reply by ', 'Snap! With an ', 'Plays ', 'Lays down an ', 'Playes gonna play an ', 'xoxOXoXOOXooo it\'s an... '];
 
 $( document ).ready(function() {
   console.log( "ready!" );
@@ -93,8 +93,9 @@ $( document ).ready(function() {
           }) 
             console.log(moves);
             moves = moves + 1;
-              // $("#reset_board").on("click", function() {
-              // gameBoard.length = 0;
+            
+            // $("#reset_board").on("click", function() {
+            //   window.location.reload();
           }); 
       // });
 
