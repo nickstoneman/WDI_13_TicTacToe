@@ -3,10 +3,11 @@ var moves = 0;
 var gameBoard = [];
 var winningIndexPositions = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [6,4,2] ];
 
-var adjectives = ['Sweet move for ', 'Nice reply by ', 'Snap! With an ', 'Plays ', 'Lays down an ', 'Playes gonna play an ', 'xoxOXoXOOXooo it\'s an... '];
+var adjectives = ['Sweet move for ', 'Nice reply by ', 'Snap! With an ', 'Plays ', 'Lays down an ', 'Players gonna play an ', 'xoxOXoXOOXooo it\'s an... '];
 
 $( document ).ready(function() {
   console.log( "ready!" );
+  $('body').css('background-image', 'url(images/grey_tile.png)');
 
     soundManager.setup({
     url: 'swf/',
@@ -74,7 +75,7 @@ $( document ).ready(function() {
         $('ul').append('<li>' + randomAdjective + " " + output + '</li>');
       }
       
-      //  Decide who wins
+      // Decide who wins
       // console.log($.inArray(index, gameBoard[0]));
       
        $.each(winningIndexPositions, function(index, winningCombo) {
@@ -87,8 +88,8 @@ $( document ).ready(function() {
              ((gameBoard[winningCombo[0]] ==="O") && (gameBoard[winningCombo[1]] === "O") && (gameBoard[winningCombo[2]] === "O")) {
               console.log("O winner");
               $('#winner-text').text("o wins!");
-            } else if (moves.length === 8) {
-              console.log("its a tie");
+            } else if (moves === 8) {
+              $('#winner-text').text("tis a tie!");
               };
           }) 
             console.log(moves);
